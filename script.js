@@ -91,4 +91,10 @@ document.addEventListener('DOMContentLoaded', function(){
 	  document.getElementById("themeToggle").textContent = isDark ? "☀️" : "🌙";
 	  mobileThemeToggle.textContent = isDark ? "☀️" : "🌙";
 	});
+  const mobileToggle = document.getElementById("mobileToggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  mobileToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 });
