@@ -69,19 +69,15 @@ body{
 }
 
 .hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 420px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 40px;
 }
 /* .hero-title{font-size:44px;margin:0;line-height:1.02;letter-spacing:-0.02em}
 .hero-sub{color:var(--muted);margin-top:14px;max-width:560px;font-size:17px} */
-.hero-title {
-  font-size: clamp(30px, 6vw, 44px);
-  line-height: 1.15;
-}
-.hero-sub {
-  font-size: clamp(15px, 4vw, 17px);
-}
+.hero-title{font-size:44px;margin:0;line-height:1.02;letter-spacing:-0.02em}
+.hero-sub{color:var(--muted);margin-top:14px;max-width:560px;font-size:17px}
 .hero-ctas{margin-top:22px;display:flex;gap:12px}
 .btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;cursor:pointer}
 .btn-primary{background:linear-gradient(90deg,var(--accent-start),var(--accent-end));color:#fff;box-shadow:0 12px 30px rgba(79,70,229,0.12)}
@@ -113,11 +109,7 @@ body{
     /* inset 0 1px 0 rgba(255, 255, 255, 0.25); */
 /* } */
 /* .highlights { display: flex; gap: 14px; margin-top: 24px; list-style: none; padding: 0; }  */
-.highlights {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
+.highlights { display: flex; gap: 14px; margin-top: 24px; list-style: none; padding: 0; } 
 .highlights li { 
 		font-weight: 700; color: var(--muted); 
 		/* background: linear-gradient(135deg, rgba(245,232,200,0.85), rgba(236,216,170,0.75));  */
@@ -589,9 +581,14 @@ body.dark .project-tags span:hover {
 }
 @media (max-width: 768px) {
   .hero-inner {
+    display: grid;
     grid-template-columns: 1fr;
     text-align: center;
-  }
+  } 
+  .hero-title {
+  font-size: clamp(30px, 6vw, 44px);
+  line-height: 1.15;
+}
 
   .hero-left {
     align-items: center;
@@ -601,6 +598,9 @@ body.dark .project-tags span:hover {
     justify-content: center;
     flex-wrap: wrap;
   }
+  .hero-sub {
+  font-size: clamp(15px, 4vw, 17px);
+}
 
   .mobile-toggle {
     display: inline-flex;
@@ -645,9 +645,12 @@ body.dark .project-tags span:hover {
     width: 100%;
     text-align: center;
   }
-   .highlights {
-    grid-template-columns: 1fr;
-  }
+
+  .highlights {
+  display: grid;
+   grid-template-columns: 1fr;
+  gap: 14px;
+}
 
   .highlights li {
     width: 100%;
